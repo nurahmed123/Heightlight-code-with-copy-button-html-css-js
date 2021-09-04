@@ -1,63 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="prism.css" />
-
-    <title>Highlight code with copy button</title>
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="prism.css">
+</head>
+<body>
     <div class="container">
-      <div class="code-wrapper">
-        <pre>
-            <code id="code" class="language-css">
-                *,
-                *:before,
-                *:after{
-                    padding: 0;
-                    margin: 0;
-                    box-sizing: border-box;
-                }
-                body{
-                    padding: 20px;
-                }
-                p,button{
-                    font-family: "Poppins",sans-serif;
-                    font-size: 20px;
-                }
-                button{
-                    background-color: #02cb69;
-                    border: none;
-                    color: #ffffff;
-                    margin: 10px 0 30px 0;
-                    padding: 5px 20px;
-                    border-radius: 5px;
-                    outline: none;
-                    cursor: pointer;
-                }
-                #alert{
-                    width: 90%;
-                    text-align: center;
-                    background-color: #202020;
-                    color: #ffffff;
-                    position: absolute;
-                    margin: auto;
-                    left: 0;
-                    right: 0;
-                    bottom: 20px;
-                    padding: 5px 0;
-                    display: block;
-                }
-            </code>
-        </pre>
-        <button id="copy-button">Copy</button>
-      </div>
-    </div>
+        <div class="code-wrape">
+            <pre>
+                <code id="code" class="language-python">
+                    hri_input_num = int(input())         #test case
 
-    <script src="main.js" defer></script>
-    <script src="prism.js"></script>
-  </body>
+
+                    data_input = input().split(' ')      #flavo sequence 
+
+                    fun_input_number = int(input())     #number of oparetion 
+
+                    for opration_input in range(1, fun_input_number+1):
+                        values = input().split(' ')     #operation
+
+                        if( values[0] == '1' ):
+                            number = values[1]
+                            data_input[ int(number) -1] = values[2]
+
+                        elif( values[0] == '2' ):
+                            i = int(values[1])
+                            j = int(values[2])
+                            z = values[3]
+                            v = values[4]
+
+                            for item_no in range(i, j+1):
+                                if data_input[ item_no - 1 ] == z:
+                                    data_input[ item_no - 1 ] = v
+    
+                        elif( values[0] == '3' ):
+                            result = 0
+                            i = int(values[1])
+                            j = int(values[2])
+
+                            for item_no in range(i, j+1):
+                                result += int(data_input[ item_no -1 ]) 
+                            print(result)
+                </code>
+            </pre>
+            <button id="copy-button">Copy</button>
+        </div>
+    </div>
+</body>
+<script src="prism.js"></script>
+  <script src="main.js"></script>
 </html>
